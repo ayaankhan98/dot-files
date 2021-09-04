@@ -57,7 +57,8 @@ Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'akinsho/bufferline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
+Plug 'Mofiqul/vscode.nvim'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 set switchbuf=usetab
 syntax on
@@ -118,6 +119,12 @@ let g:rbpt_loadcmd_toggle = 0
 "let g:gruvbox_contrast_dark="hard"
 "colorscheme gruvbox
 
+"colorscheme codedark
+"let g:airline_theme = 'codedark'
+
+"let g:vscode_style = "dark"
+"colorscheme vscode
+
 colorscheme everforest
 let g:everforest_ui_contrast = 'high'
 let g:everforest_background='hard'
@@ -127,6 +134,24 @@ let g:everforest_enable_italic=1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_indent_guides_start_level = 2
+
+let g:startify_custom_header= [
+      \ '                                                               ',
+      \ '           ██████████████████  ████████                        ',
+      \ '           ██████████████████  ████████                        ',
+      \ '           ██████████████████  ████████                        ',
+      \ '           ██████████████████  ████████                        ',
+      \ '           ████████            ████████        Ayaan Khan      ',
+      \ '           ████████  ████████  ████████        NVIM            ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████                        ',
+      \ '           ████████  ████████  ████████ANJARO                  ',
+      \ ]
 
 set laststatus=2
 set termguicolors
@@ -473,3 +498,4 @@ EOF
 
 source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
