@@ -1,0 +1,23 @@
+let g:which_key_map.T = {
+      \ 'name' : '+Telescope' ,
+      \ 'f' : [':Telescope find_files'                          , 'find_files'],
+      \ 't' : [':Telescope treesitter'                          , 'treesitter'],
+      \ 'v' : [':Telescope vim_options'                         , 'vim_options'],
+      \ 'j' : [':Telescope jumplist'                            , 'jumplist'],
+      \ 'r' : [':Telescope registers'                           , 'registers'],
+      \ 'g' : [':Telescope git_branches'                        , 'git_branches'],
+      \ 'l' : [':Telescope lsp_implementations'                 , 'lsp_implementations'],
+      \ 'q' : [':Telescope quickfix'                            , 'quickfix'],
+      \ 'c' : [':Telescope colorscheme'                         , 'colorscheme'],
+      \ 'p' : [':Telescope planets'                             , 'planets'],
+      \ 'F' : [':Telescope fd'                                  , 'fd'],
+      \ 'L' : [':Telescope loclist'                             , 'loclist'],
+      \ 'S' : [':Telescope spell_suggest'                       , 'spell_suggest'],
+      \ 'h' : [':Telescope highlights'                          , 'highlights'],
+      \ 'B' : [':Telescope file_browser'                        , 'file_browser'],
+      \ 'R' : [':Telescope lsp_references'                      , 'lsp_references'],
+      \ 'b' : [':Telescope buffers'                             , 'buffers'],
+      \ 'P' : [':Telescope current_buffer_fuzzy_find'           , 'current_buffer_fuzzy_find'],
+      \ 'd' : [':Telescope command_history'                     , 'command_history'],
+      \ }
+
