@@ -98,8 +98,9 @@ set list
 set cursorline
 set number
 set undofile
-set spell spelllang=en_us
-set spellcapcheck=""
+"set spell spelllang=en_us
+"set spellcapcheck=no
+set nospell
 set signcolumn=yes
 set relativenumber
 set mouse=a
@@ -174,7 +175,7 @@ set backup
 nnoremap <F1> :!./a.out
 nnoremap <F2> :!cat output.txt
 nnoremap <F3> :TagbarToggle<CR>
-nnoremap <F5> :!g++ % -Wall -Werror -std=c++17 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=null -fsanitize=vla-bound -fsanitize=return -fsanitize=bounds -g<Enter>
+nnoremap <F5> :!g++ % -Wall -Werror -std=c++17 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=null -fsanitize=vla-bound -fsanitize=return -fsanitize=bounds -fsanitize=pointer-compare -fsanitize=pointer-subtract -fsanitize=integer-divide-by-zero -fsanitize=unreachable -fsanitize=null -fsanitize=signed-integer-overflow  -fsanitize=alignment -fsanitize=float-divide-by-zero -fsanitize=float-cast-overflow -fsanitize=pointer-overflow -g<Enter>
 map <F6> :NERDTreeToggle<CR>
 map <F7> gg=G<C-o><C-o>
 "nnoremap <F5> :!g++ -o %:r.out % -std=c++17<Enter>
@@ -195,6 +196,16 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+nnoremap <silent><leader>0 <Cmd>BufferLinePickClose<CR>
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
