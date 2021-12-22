@@ -1,0 +1,87 @@
+So far so good, we have established communication between falconOS
+mouse and keyboard. But, an operating system does more than this.
+what about connecting to internet, playing music, transfering files
+over FTP or bluetooth and accessing high end graphics cards?
+So, in order to achieve all this we somehow need to establish
+communication between these devices which are connected internally
+to computer hardware through a PCI bus.
+
+In FalconOS we have implemented a basic interface which simplies this
+job a little bit. We have implemented a class in falconOS using which
+we can communicate to these devices. Basically FalconOS internally
+uses the computer hardware ports to send and recieve signals to PCI bus
+to make this possible.
+
+A snapshot is shown here listing all the connected PCI devices, we
+got this list using the same PCI interface which we have implemented
+in falconOS.
+
+
+Most of the modern operating systems have the ability to execute more
+than one task at a time for example you can play music and run a
+word processing software at once. So, we thought of implementing basic
+multitasking architecture in falconOS too.
+
+Let's look at a basic example to demonstrate the capability of falconOS
+in multitasking.
+
+..........
+..........
+..........
+
+So, how is this all happening. Behind the scene falconOS scheules
+multiple tasks on each clock interrput using a round robin scheduler
+
+Lets consider a case to have a clear grasp of all this... Suppose
+task A is initially executing and now a clock interrupt occurs, so
+round robbin scheduler will get triggered, and it gets the next
+scheduled task, let' say this task is task B. So falconOS will save
+the current state of task A in it's process stack and makes a
+context switch to task B by loading the CPU registers with the state
+of task B. and on the next interrput same things happens and a new
+task gets scheduled. So, by this we have the ability to switch between
+taks and execute then in a multitasking way.
+
+Most of the programs require memeory at run time. falconOS provides
+dynamic memory allocation scheme. we have implemented malloc and free
+functions and new delete operator to dynamically allcate memory resouces.
+
+behind the scenes we have mapped the RAM to a doubly linked list
+structure to allocate memory resouces as per the need.
+Each node of this doubly linked list keeps tarck of the allocated
+space this node have and a pointer to it's previous and next node.
+on a malloc call this DMA interface returns the address of next
+avaiable sufficient memory space to user and on a free function call
+this DMA interface marks the specified memory address range as
+unallocated thereby freeing the space.
+
+So, Modern operating system provies Graphical user interface. therefore
+we also implemented a basic 320 x 200 low resolution 8 bit color
+channel graphics mode in falconOS.
+We are utilising the internal Video Graphics Array (VGA Memory) to
+achieve all this. We are writing the pixel data into this VGA memory
+which finally gets rendered on the screen by the VGA hardware with the
+help of sequencer port.
+
+So, far in graphics falconOS has a basic gui library implementaion
+that is libGUI. LibGUI can draw any type of shape using polygon rendering
+technique. LibGUI can also draw rectangles, lines and pixel drawings.
+It's has a robust design and is eaisly integrable when we switch to
+high graphics resolution in future.
+
+So, that's all we have for now. But there is a long road ahead
+in this project. Currently we have segmentation based memory scheme.
+We can chnage this to Paging to have more flexibility over memory
+resources.
+We can add file system support for FAT-32, NTFS, ext2, ext3 and ext4 in
+future by adding support to ATA (Adavance technology attachment)
+and SATA.
+we can enhance falcon graphics system by integrating nvidia,
+intel UHD graphics support.
+And there is much more we can do in this.
+
+So Thats all for now.
+
+Thank You!
+
+Any Questions?

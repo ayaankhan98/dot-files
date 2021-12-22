@@ -1,0 +1,46 @@
+-------------------------------------------------
+      Software Requirement Specifications
+              Ask Your Seniors
+-------------------------------------------------
+
+- Functionalities:
+  - Provide a FAQ section (showing commonly asked questions)
+  - Target public
+    - Seniors (write answers)
+    - Juniors (ask questions)
+    - Admin (Website managing community)
+  - SignUp / LogIn facility for seniors and Admin
+  - Once loggedIn a senior can
+    - view all posted questions
+    - search for a question
+    - sort questions category wise
+    - answer any question
+    - edit his/her previously written answers
+    - upvote or downvote any answer
+    - post a question
+    - list all his/her posted questions
+    - edit his/her posted question
+    - delete his/her posted question
+  - A junior can
+    - Post a question
+    - view all questions
+    - search for a question
+    - sort questions category wise
+    - upvote and downvote answers
+  - Admin (Managing Community Member)
+    - have access to admin panel
+    - View all posted questions
+    - edit any posted question
+    - delete any posted question
+    - edit any posted answer
+    - delete any posted answer
+    - enable or disable, a flag associated with each question
+      - if enable, question will show on website
+      - else, question will not be visible on website
+    - enable or disbale, a flag associated with each answer
+      - if enable, answer will be visible on website
+      - else, answer will not be visible on website
+
+- Side Notes:
+  - Email dispatching notifier
+

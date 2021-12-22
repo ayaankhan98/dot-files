@@ -41,6 +41,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/everforest'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/plenary.nvim'
@@ -54,7 +55,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-Plug 'akinsho/bufferline.nvim'
+"Plug 'akinsho/bufferline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'Mofiqul/vscode.nvim'
@@ -109,6 +110,13 @@ let g:airline_powerline_fonts=1
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 0
+
+nnoremap <C-Left> :bprevious<CR>
+nnoremap <C-Right>   :bnext<CR>
+
 "set background=dark
 "set background=light
 "let g:gruvbox_contrast_light="hard"
@@ -126,11 +134,13 @@ let g:rbpt_loadcmd_toggle = 0
 "let g:vscode_style = "dark"
 "colorscheme vscode
 
+"colorscheme dracula
+"let g:colorscheme_bg="dark"
+
 colorscheme everforest
 let g:everforest_ui_contrast = 'high'
 let g:everforest_background='hard'
 let g:everforest_enable_italic=1
-
 
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
@@ -375,7 +385,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 lua <<EOF
 
-require("bufferline").setup{}
+--require("bufferline").setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.cmake.setup{}
