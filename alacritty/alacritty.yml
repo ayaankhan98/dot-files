@@ -52,6 +52,8 @@ window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
 
+  opacity: 0.85
+
   # Window decorations
   #
   # Values for `decorations`:
@@ -150,7 +152,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 12.0
+  #size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -224,7 +226,7 @@ colors:
       foreground: '#ffffff'
       background: '#000000'
 
-    bar:
+    colors.footer_bar:
       background: '#c5c8c6'
       foreground: '#1d1f21'
 
@@ -357,7 +359,8 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.88
+# background_opacity is deprecated after update
+# background_opacity: 0.88
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -419,8 +422,8 @@ background_opacity: 0.88
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
+shell:
+  program: /bin/zsh-5.9
 #  args:
 #    - --login
 
